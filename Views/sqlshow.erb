@@ -1,0 +1,27 @@
+<html>
+
+  <body>
+
+    <header>
+      <h1>Petulance</h1>
+      <a href="/pets">Go home</a>
+    </header>
+
+    <p><%= thispet[0][1] %> is a <%= thispet[0][2] %></p>
+
+    <h3>Update <%= thispet[1] %>'s name here:</h3>
+
+    <form action="/pet/<%= thispet[0][0] %>" method="post">
+      <input type="hidden" name="_method" value="put">
+      <input type="text" name="name" placeholder="Pet's new name" required>
+      <button>UDATE IT!!!</button>
+    </form>
+
+    <p><%= thispet[0][1] %> can be removed here:</p>
+    <form action="/pet/<%= thispet[0][0] %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>Make pet homeless</button>
+    </form>
+
+  </body>
+</html>

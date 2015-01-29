@@ -1,0 +1,26 @@
+<html>
+
+<body>
+
+  <header>
+    <h1>Petulance</h1>
+  </header>
+
+    <ul>
+
+      <% pets.each do |pet| %>
+      <li><%= pet[0] %> is a <%= pet[1] %> with ID of <a href="/pet/<%= pet[2] %>"><%= pet[2] %></a></li>
+        <% end %>
+    </ul>
+
+    <h3>Add a pet here:</h3>
+    <form action="/pet" method="post">
+      <input type="text" name="name" placeholder="pet name"
+      required>
+      <input type="text" name="type" placeholder="pet type" required>
+      <button>ADD IT!</button>
+    </form>
+
+  </body>
+
+</html>
